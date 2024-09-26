@@ -1,0 +1,406 @@
+/*
+
+ * Assignment 1: Validating Age and Income
+Write a program that checks if a person is eligible for a loan based on their age and income.
+Requirements:
+•    A person is eligible if their age is between 18 and 60 and their income is above $25,000.
+•    Use logical && to combine these conditions.
+ */
+package assignments1;
+import java.util.*;
+public class Person {
+
+	private int age;
+	private float income;
+	
+	Scanner sc = new Scanner(System.in);
+	
+	public void accept()
+	{
+		System.out.println("Enter age");
+		age=sc.nextInt();
+		System.out.println("Enter income");
+		income=sc.nextInt();
+	}
+	public void checkEligibility()
+	{
+		if(age>=18 && age<=60 && income>=25000)
+			System.out.println("Eligible for loan");
+		else
+			System.out.println("Not Eligible for loan");
+		
+	
+		
+	}
+	public void display()
+	{
+		System.out.println("age is : " +age);
+		System.out.println("income is : " +income);
+		
+		
+	}
+	
+	
+}
+package assignments1;
+
+public class TestPerson {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Person person = new Person();
+		
+		person.accept();
+		person.display();
+		person.checkEligibility();
+	}
+
+}
+package module4;
+import java.util.Scanner;
+public class Emp {
+	
+	private String eName;
+	private int empNo;
+	private double bal;
+
+	Scanner sc = new Scanner(System.in);
+
+	public void accept() {
+		System.out.println("Enter name: ");
+		eName = sc.next();
+		System.out.println("Enter emp number");
+		empNo = sc.nextInt();
+		System.out.println("Enter balance: ");
+		bal = sc.nextDouble();
+	}
+	
+	public void checkEmpNo()
+	{
+		if(empNo > 0 )
+			System.out.println("Valid Employee number");
+		else
+			System.out.println("Invalid Employee number");
+	}
+	public void checkBal()
+	{
+		if(bal>= 0 && bal<100000)
+			System.out.println("valid Balace " +bal);
+		else 
+			System.out.println("Invalid balace " +bal);
+	}
+	public void display()
+	{
+		
+			System.out.println("Name is : " +eName);
+			System.out.println("Emp no is : " +empNo);
+			System.out.println("Balace is : " +bal);
+			
+		
+	}
+}
+package module4;
+
+public class TestEmp {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Emp emp = new Emp();
+		
+		emp.accept();
+		emp.display();
+		emp.checkEmpNo();
+		emp.checkBal();
+	}
+
+}
+/*
+ Assignment 4: Voting Eligibility
+Write a program that checks if a person is eligible to vote. A person can vote if they are a citizen and their age is 18 or above.
+Requirements:
+•    Use logical && to combine conditions, and ! to negate conditions if necessary.
+ */
+
+
+package assignments1;
+import java.util.Scanner;
+public class Vote {
+
+	
+	
+
+
+	private int age;
+	private String citizen;
+
+	Scanner sc = new Scanner(System.in);
+
+	public void accept() {
+		
+		System.out.println("Enter age");
+		age = sc.nextInt();
+		System.out.println("Enter citizenship");
+		citizen=sc.next();
+		
+	}
+
+	public void checkEligibility()
+    {
+    	if(age >18 && citizen=="indian" &&age < 100)
+    		System.out.println("Eligible to vote");
+    	
+    	else
+    		System.out.println("Not eligible ");
+
+    }
+}
+package assignments1;
+
+public class TestVote {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Vote vote = new Vote();
+		vote.accept();
+		vote.checkEligibility();
+	}
+
+}
+package module3;
+
+import java.util.Scanner;
+
+public class User {
+
+	private String name;
+	private int age;
+	private double sal;
+
+	Scanner sc = new Scanner(System.in);
+
+	public void accept() {
+		System.out.println("Enter name: ");
+		name = sc.next();
+		System.out.println("Enter age");
+		age = sc.nextInt();
+		System.out.println("Enter salary: ");
+		sal = sc.nextDouble();
+	}
+
+	public void checkAge()
+    {
+    	if(age >18 )
+    		System.out.println("Eligible to vote");
+    	else if( age > 18 && age < 100)
+    		System.out.println("Your age is valid ");
+    	else
+    		System.out.println("Invalid age");
+
+    }
+	public void checkSal()
+	{
+		if( sal > 0  && sal < 100000)
+			System.out.println("Salary is valid");
+		else
+			System.out.println("Invalid salary");
+	}
+	public void display()
+	{
+		System.out.println("Name is : " +name);
+		System.out.println("Age is : " +age);
+		System.out.println("Salary is : " +sal);
+		
+	}
+}
+
+
+package practical;
+
+import java.util.Scanner;
+
+/*Assignment 5: Job Application
+Write a program that checks if a person is eligible for a job based on their qualifications. 
+A person is eligible if they have a bachelor’s degree or equivalent experience, and 
+they have a clean criminal record.
+Requirements:
+•    Use logical operators to combine conditions.
+*/
+public class Job {
+private String qualifications;
+private String name;
+private int experience;
+private boolean criminalrecord;
+
+Scanner sc = new Scanner(System.in);
+public void accepteinfo()
+{
+	System.out.println("enter the qualifications");
+	qualifications = sc.next();
+	System.out.println("enter the name");
+	name=sc.next();
+	System.out.println("enter the experience");
+	experience = sc.nextInt();
+	System.out.println("enter the criminalrecord ");
+	criminalrecord = sc.nextBoolean();	
+}
+
+public void checkforJob()
+{
+	if (qualifications.equals("BE") && !criminalrecord)
+	{
+		System.out.println("are you eligible for job");
+	}
+	else {
+		System.out.println("are you not eligible for job");
+	}
+}
+
+
+
+}
+
+package practical;
+
+public class JobMain {
+	public static void main(String[] args) {
+		Job j1 = new Job();
+		j1.accepteinfo();
+		j1.checkforJob();
+	}
+
+}
+
+
+package practical;
+
+import java.util.Scanner;
+
+/*Assignment 6: Logical NOT (!) for Negation
+Write a program that determines whether a number is not between 10 and 20 (inclusive).
+Requirements:
+•    Use logical ! to negate conditions.
+*/
+public class Number {
+
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int num;
+		Scanner sc = new Scanner(System.in);
+		System.out.println("enter the number");
+		num= sc.nextInt();
+		if(!(num>10 && num<20))
+		{
+			System.out.println("the number is not in between 10 and 20");
+		}
+		else {
+			System.out.println("the number is in between 10 and 20");
+		}
+
+	}
+
+}
+
+package practical;
+/*Assignment 7: Weather Conditions
+Write a program that determines whether it's safe to go outside based on temperature 
+and weather conditions. The conditions to go outside are:
+•    Temperature should be between 20°C and 30°C.
+•    It should not be raining.
+Requirements:
+•    Use logical operators && and !.*/
+
+import java.util.Scanner;
+
+public class Weather {
+	private float Temperature;
+	private String weatherconditions;
+	Scanner sc = new Scanner(System.in);
+	public void accepteinfo()
+	{
+		System.out.println("enter the Temperature");
+		Temperature = sc.nextFloat();
+		System.out.println("enter the weatherconditions");
+		weatherconditions=sc.next();
+	}
+	
+	public void checkcondition()
+	{
+		if(Temperature>20 && Temperature<30 && weatherconditions!="raining")
+		{
+			System.out.println("conditions to go outside");
+		}
+		else {
+			System.out.println("conditions is not go outside");
+		}
+		
+			
+		
+	}
+public static void main(String[] args) {
+	
+	Weather w = new Weather();
+	w.accepteinfo();
+	w.checkcondition();
+	
+}
+}
+
+
+package practical;
+
+import java.util.Scanner;
+
+/*Assignment 8: Determine the Greatest Number Using Ternary Operator
+
+Write a Java program to find the greatest number among three numbers using the ternary operator.
+
+*Input: Three integer numbers from the user.
+*Output: The greatest number among the three entered numbers.
+*/
+public class GreatestNumber {
+private int num1;
+private int num2;
+private int num3;
+
+Scanner sc = new Scanner(System.in);
+public void accepteinfo()
+{
+	System.out.println("enter the num1");
+	num1 = sc.nextInt();
+	System.out.println("enter the num2");
+	num2=sc.nextInt();
+	System.out.println("enter the num3");
+	num3 = sc.nextInt();
+}
+
+public void findlargenumber()
+{
+	if(num1>num2 && num1>num3)
+	{
+		System.out.println("The first number is greater" + num1);
+	}
+	else if(num2>num1 && num2>num3)
+	{
+		System.out.println("The second number is greater" + num2);
+	}
+	else {
+		System.out.println("The Third number is greater" + num3);
+	}
+	
+}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		GreatestNumber g =new GreatestNumber();
+		g.accepteinfo();
+		g.findlargenumber();
+		
+
+	}
+
+}
+
+
